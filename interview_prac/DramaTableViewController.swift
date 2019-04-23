@@ -161,12 +161,9 @@ class DramaTableViewController: UITableViewController, UISearchBarDelegate {
         
         print("[ViewController searchBar] searchText: \(searchText)")
         
-        // 没有搜索内容时显示全部内容
         if searchText == "" {
             self.filteredData = self.dramaData
         } else {
-            
-            // 匹配用户输入的前缀，不区分大小写
             self.filteredData = []
             
             for i in self.dramaData {
@@ -176,8 +173,6 @@ class DramaTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
-        
-        // 刷新tableView 数据显示
         self.tableView.reloadData()
         print(filteredData)
     }
